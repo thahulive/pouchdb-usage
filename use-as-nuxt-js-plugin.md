@@ -12,10 +12,13 @@ npm install --save pouchdb
 ```
 import Vue from 'vue';
 import PouchDB from 'pouchdb';
+import Vuex from 'vuex'
 
 let pouchdb = new PouchDB('movies')
 Vue.prototype.pouchdb = pouchdb
-Vue.prototype.$pouchdb = pouchdb.pouchdb
+
+// use inside vuex store
+Vuex.Store.prototype.pouchdb = pouchdb
 
 Vue.use(pouchdb);
 ```
